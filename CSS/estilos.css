@@ -18,9 +18,10 @@
     --clr-accent-85: hsl(286, 100%, 85%);
 }
 
-*{
+* {
     box-sizing: border-box;
-    
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
 }
 
 /* Estilos generales para el Body */
@@ -28,8 +29,6 @@ body {
     background-color: var(--clr-neutral);
     color: var(--clr-primary);
     margin: 0;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
 }
 
 /* Titulares */
@@ -49,21 +48,18 @@ header {
     text-align: center;
 }
 
-
-
 /* Estilos del main */
 main {
     padding: 2rem 1rem;
 }
 
-/*Estilos para las secciones */
-
-section{
+/* Estilos para las secciones */
+section {
     width: min(62rem, 100%);
     margin: 0 auto;
-    padding: 2rem;
-       
+    padding: 2rem 0;
 }
+
 
 /* Clase 3 / modelo de caja */
 .box-model {
@@ -77,40 +73,39 @@ section{
     width: 550px; /* Ancho */
 }
 
+
 /* Clase 4 */
 
-/*Estilos para la seccion bienvenida*/
-
+/* Estilos para la sección bienvenida */
 #bienvenida {
-background-image: url('../img/bienvenida.jpg');
-background-repeat: no-repeat;
-background-size: cover;
-height: 32rem;
-padding: 0;
+    background-image: url('../img/bienvenida.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 32rem;
+    padding: 0;
 
-display: flex;
-justify-content: center;
-flex-direction: column;
-align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
 }
 
 #bienvenida > h1 {
     background-color: var(--clr-primary-75);
     color: var(--clr-neutral);
     padding: 2rem 1rem;
-    
 }
 
 img {
     width: 100%;
 }
 
+
+/* Links */
+/* Link / Visited */
 header a {
     margin: 1rem;
 }
-
-/* Links */ 
-/*Estado en reposo*/ /*Estado visitado*/
 
 header a:link,
 header a:visited {
@@ -118,29 +113,27 @@ header a:visited {
     text-decoration: none;
 }
 
-/* Hover*/ /*Cuando activamos el link*/
-
+/* Hover  / Active*/
 header a:hover,
-header a:active { 
+header a:active {
     color: var(--clr-accent-65);
-
 }
 
-
 /* Clase 5 */
-
-
 .contenedor-flex {
     background-color: var(--clr-secondary);
-    
 
-    display: flex; /*activa el display flex en el contenedor */
-    flex-direction: row; /*Controla la direccion del eje principal*/
+    display: flex; /* Esto activa el display flex en el contenedor */
 
-    justify-content: center; /*Controla el eje principal */
-    align-items: center; /*Controla el eje secundario*/
+    flex-direction: row; /* Controla la dirección del eje principal */
+
+    justify-content: flex-start; /* Controla el eje principal */
+    align-items: stretch; /* Controla el eje secundario */
+
     gap: 2rem;
     padding: 2rem;
+
+    flex-wrap: wrap;
 }
 
 .item {
@@ -153,18 +146,19 @@ header a:active {
 
 .contenedor-novedades {
     display: flex;
+
     gap: 1rem;
     justify-content: space-between;
     padding: 2rem 0;
 }
 
-article{
-    width: 12rem;
+article {
+    width: 14rem;
     display: flex;
     flex-direction: column;
-    justify-content: stretch;
+    justify-content: space-between;
+    align-items: stretch;
     gap: 0.5rem;
-    
 }
 
 article h2,
@@ -172,29 +166,159 @@ article h3 {
     font-size: 1rem;
     text-align: center;
     margin: 0;
-
 }
 
 article h3 {
     font-weight: 400;
 }
 
+.contenedor-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 a.btn-outline:link,
-a.btn.outline:visited {
-    text-decoration: none ;
+a.btn-outline:visited,
+a.btn-fill:link,
+a.btn-fill:visited {
+    text-decoration: none;
     text-align: center;
+    border: 0.1rem solid var(--clr-primary);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}
+
+a.btn-outline:hover,
+a.btn-outline:active {
+    background-color: var(--clr-primary);
+    color: var(--clr-accent-65);
+}
+
+a.btn-fill:link,
+a.btn-fill:visited {
+    background-color: var(--clr-primary);
+    color: var(--clr-accent-65);
+}
+
+a.btn-fill:hover,
+a.btn-fill:active {
+    background-color: var(--clr-accent-65);
+    color: var(--clr-primary);
+}
+
+/* Desafíos M1 */
+.estilo-1 {
+    font-weight: 600;
+}
+
+.estilo-2 {
+    font-weight: 600;
+    color: var(--clr-accent-65);
+    background-color: var(--clr-primary);
+    padding: 0.5rem;
+}
+
+/* Clase 7 Formularios */
+
+form {
+    border: 0.1rem solid var(--clr-primary);
+    width: 24rem;
+    margin: 1rem auto 2rem; /* top / left y right / bottom */
+    padding: 2rem;
+    border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Distancia entre elementos en un contenedor con flex */
+}
+
+form h2 {
+    text-align: center;
+}
+
+/* .estado {
+    display: flex;
+    justify-content: flex-end;
+}
+*/
+
+form span {
+    text-align:right;
+} 
+
+/* Clase 8 */
+input,
+select,
+textarea,
+button {
+    padding: 0.5rem 1rem;
     border: 0.1rem solid var(--clr-primary);
     border-radius: 0.5rem;
 }
 
-a.btn-fill:link,
-a.btn-fill:active {
-    text-decoration: none;
-    text-align: center;
-    border: 0.1rem solid var(--clr-primary);
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    font-size: 0.9rem;
+input:focus,
+select:focus,
+textarea:focus {
+    /*outline: 0.1rem solid var(--clr-accent-65);
+    outline-offset: -0.1rem; */
+    outline: none;
+    border: 0.1rem solid var(--clr-accent-65);
+}
+
+textarea {
+    min-height: 12rem;
+}
+
+button {
     background-color: var(--clr-primary);
-    color: var(--clr-accent-65);
+    color: var(--clr-neutral);
+}
+
+button:hover {
+    background-color: var(--clr-accent-65);
+    color: var(--clr-primary);
+    cursor: pointer;
+}
+
+/* Tablas */
+
+table {
+    border: 0.1rem solid var(--clr-primary);
+    width: 100%; /* Toma el 100% del ancho de la sección*/
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table img {
+    width: 7rem;
+}
+
+caption {
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+/*  tr, table row (fila de la tabla)
+    th, table header (encabezado de las columnas)
+    td, table data (celdas comunes)    
+*/
+th {
+    padding: 1rem;
+}
+
+th, 
+td {
+    border: 0.1rem solid var(--clr-primary);
+}
+
+/* first-of-type (primer elemento de su tipo) */
+table tr:first-of-type {
+    background-color: var(--clr-primary);
+    color: var(--clr-neutral);
+}
+
+tr:hover {
+    background-color: var(--clr-secondary);
 }
